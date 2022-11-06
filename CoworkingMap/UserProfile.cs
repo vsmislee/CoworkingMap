@@ -29,7 +29,7 @@ namespace CoworkingMap
         private void buttonMain_Click(object sender, EventArgs e)
         {
             this.Close();
-            //mainForm.Show();
+           
         }
 
         private void UserProfile_Load(object sender, EventArgs e)
