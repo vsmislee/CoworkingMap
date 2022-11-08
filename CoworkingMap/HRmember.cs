@@ -8,7 +8,7 @@ namespace CoworkingMap
 {
     class HRmember : Member
     {
-        public HRmember(string name, string surname, string middlename, string post, int workplace) : base(name, surname, middlename, post, workplace) { }
+        public HRmember(string name, string surname, string middlename, string post, string phoneNumber, string email, int workplace) : base(name, surname, middlename, post, phoneNumber, email, workplace) { }
         
             
         
@@ -22,13 +22,13 @@ namespace CoworkingMap
             // удаление места и штуки с бд
         }
 
-        public Member AddMember(bool isHR, string name, string surname, string middlename, string post, int workplace)
+        public Member AddMember(bool isHR, string name, string surname, string middlename, string post, string phoneNumber, string email, int workplace)
         {
             Member newmember;
             if (isHR)
-                newmember = new HRmember(name, surname, middlename, post, workplace);
+                newmember = new HRmember(name, surname, middlename, post, phoneNumber, email, workplace);
             else
-                newmember = new Member(name, surname, middlename, post, workplace);
+                newmember = new Member(name, surname, middlename, post, phoneNumber, email, workplace);
             // добавить добавление в базу данных
 
             return newmember;

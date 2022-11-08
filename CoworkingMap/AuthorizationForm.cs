@@ -12,6 +12,7 @@ namespace CoworkingMap
 {
     public partial class AuthorizationForm : Form
     {
+        Member member = new Member("Михаил", "Кошурников", "Николаевич", "Разработчик", "mnkosh@list.ru", "+79822542551", 7); // на самом деле данные будут из базы загружаться
         public AuthorizationForm()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace CoworkingMap
         {
             if (textBoxLogin.Text == "login" && textBoxPassword.Text == "password") // тут должна быть сверка данных из базы
             {
-                MainForm newForm = new MainForm(this);
+                MainForm newForm = new MainForm(this, member);
                 newForm.Show();
                 this.Hide();
             }
@@ -29,8 +30,6 @@ namespace CoworkingMap
             {
                 MessageBox.Show("Неверные логин или пароль!");
             }
-
-           //this.Close();
         }
 
         private void AuthorizationForm_Load(object sender, EventArgs e)

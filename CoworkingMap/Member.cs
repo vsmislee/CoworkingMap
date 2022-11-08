@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace CoworkingMap
 {
-    class Member
+    public class Member
     {
         string name;
         string surname;
         string middlename;
         string post;
+        string email;
+        string phoneNumber;
         int worplace;
         public Member()
         {
@@ -22,13 +24,15 @@ namespace CoworkingMap
             this.worplace = 0;
         }
 
-        public Member(string name, string surname, string middlename, string post, int workplace)
+        public Member(string name, string surname, string middlename, string post, string email, string phoneNumber, int workplace)
         {
             this.name = name;
             this.surname = surname;
             this.middlename = middlename;
             this.post = post;
             this.worplace = workplace;
+            this.email = email;
+            this.phoneNumber = phoneNumber;
         }
 
         public string Name
@@ -57,6 +61,17 @@ namespace CoworkingMap
             set { this.worplace = value; }
         }
 
+        public string PhoneNumber
+        {
+            get { return this.phoneNumber; }
+            set { this.phoneNumber = value; }
+        }
+
+        public string Email
+        {
+            get { return this.email; }
+            set { this.email = value; }
+        }
 
     }
 }

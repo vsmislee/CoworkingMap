@@ -13,8 +13,11 @@ namespace CoworkingMap
     public partial class MainForm : Form
     {
         Form baseform;
+        Member member;
         List<Control> UserProfileList = new List<Control>();
         List<Control> StatisticList = new List<Control>();
+        List<Control> ContactsList = new List<Control>();
+       
         // создать массив мест
         public MainForm()
         {
@@ -25,6 +28,13 @@ namespace CoworkingMap
         {
             InitializeComponent();
             this.baseform = baseform;
+        }
+
+        public MainForm(Form baseform, Member member)
+        {
+            InitializeComponent();
+            this.baseform = baseform;
+            this.member = member;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -45,6 +55,22 @@ namespace CoworkingMap
             UserProfileList.Add(textBoxUserPhoneNumber);
             UserProfileList.Add(textBoxUserCurrentWorkPlace);
             UserProfileList.Add(textBoxUserEmail);
+
+            StatisticList.Add(listBox1);
+            StatisticList.Add(dataGridView1);
+
+            ContactsList.Add(label5);
+            ContactsList.Add(label6);
+            ContactsList.Add(label7);
+            ContactsList.Add(label8);
+            ContactsList.Add(label9);
+            ContactsList.Add(label10);
+            ContactsList.Add(textBoxBossFIO);
+            ContactsList.Add(textBoxBossEmail);
+            ContactsList.Add(textBoxBossPhoneNumber);
+            ContactsList.Add(textBoxHRFIO);
+            ContactsList.Add(textBoxHRPhoneNumber);
+            ContactsList.Add(textBoxHREmail);
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -56,7 +82,17 @@ namespace CoworkingMap
         {
             if (pictureBoxMap.Visible)
                 pictureBoxMap.Hide();
+            else if (dataGridView1.Visible) // если видим основной элемент, значит прячем всё остальное
+                    HideList(StatisticList);
+            else if (ContactsList[0].Visible)
+                HideList(ContactsList);
             ShowList(UserProfileList);
+
+            textBoxFIO.Text = member.Surname + " " + member.Name + " " + member.Middlename;
+            textBoxUserPhoneNumber.Text = member.PhoneNumber;
+            textBoxUserCurrentWorkPlace.Text = member.Workplace.ToString();
+            textBoxUserEmail.Text = member.Email;
+            
         }
 
         private void buttonStatistic_Click(object sender, EventArgs e)
@@ -65,6 +101,10 @@ namespace CoworkingMap
                 HideList(UserProfileList);
             else if (pictureBoxMap.Visible)
                 pictureBoxMap.Hide();
+            else if (ContactsList[0].Visible)
+                HideList(ContactsList);
+
+            ShowList(StatisticList);
         }
 
         private void pictureBoxMap_Click(object sender, EventArgs e)
@@ -76,6 +116,10 @@ namespace CoworkingMap
         {
             if (UserProfileList[0].Visible) // если хотя бы одни элемент видел, значит все видимы, соответственно скрываем все элементы
                 HideList(UserProfileList);
+            else if (dataGridView1.Visible)
+                HideList(StatisticList);
+            else if (ContactsList[0].Visible)
+                HideList(ContactsList);
 
             pictureBoxMap.Show();
         }
@@ -86,6 +130,10 @@ namespace CoworkingMap
                 HideList(UserProfileList);
             else if (pictureBoxMap.Visible)
                 pictureBoxMap.Hide();
+            else if (dataGridView1.Visible)
+                HideList(StatisticList);
+            else if (ContactsList[0].Visible)
+                HideList(ContactsList);
         }
 
         private void HideList(List<Control> list)
@@ -102,6 +150,18 @@ namespace CoworkingMap
             {
                 item.Show();
             }
+        }
+
+        private void buttonContacts_Click(object sender, EventArgs e)
+        {
+            if (UserProfileList[0].Visible)
+                HideList(UserProfileList);
+            else if (pictureBoxMap.Visible)
+                pictureBoxMap.Hide();
+            else if (dataGridView1.Visible)
+                HideList(StatisticList);
+
+            ShowList(ContactsList);
         }
     }
 
