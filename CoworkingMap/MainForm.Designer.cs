@@ -35,7 +35,6 @@ namespace CoworkingMap
             this.buttonStatistic = new System.Windows.Forms.Button();
             this.buttonHistory = new System.Windows.Forms.Button();
             this.buttonContacts = new System.Windows.Forms.Button();
-            this.pictureBoxMap = new System.Windows.Forms.PictureBox();
             this.textBoxUserCurrentWorkPlace = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxUserEmail = new System.Windows.Forms.TextBox();
@@ -44,7 +43,6 @@ namespace CoworkingMap
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxFIO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBoxUserPic = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBoxBossEmail = new System.Windows.Forms.TextBox();
@@ -59,9 +57,11 @@ namespace CoworkingMap
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserPic)).BeginInit();
+            this.pictureBoxUserPic = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMap = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonMain
@@ -119,16 +119,6 @@ namespace CoworkingMap
             this.buttonContacts.Text = "Контакты";
             this.buttonContacts.UseVisualStyleBackColor = false;
             this.buttonContacts.Click += new System.EventHandler(this.buttonContacts_Click);
-            // 
-            // pictureBoxMap
-            // 
-            this.pictureBoxMap.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxMap.Location = new System.Drawing.Point(107, 297);
-            this.pictureBoxMap.Name = "pictureBoxMap";
-            this.pictureBoxMap.Size = new System.Drawing.Size(1591, 577);
-            this.pictureBoxMap.TabIndex = 5;
-            this.pictureBoxMap.TabStop = false;
-            this.pictureBoxMap.Click += new System.EventHandler(this.pictureBoxMap_Click);
             // 
             // textBoxUserCurrentWorkPlace
             // 
@@ -213,15 +203,6 @@ namespace CoworkingMap
             this.label1.TabIndex = 21;
             this.label1.Text = "ФИО:";
             this.label1.Visible = false;
-            // 
-            // pictureBoxUserPic
-            // 
-            this.pictureBoxUserPic.Location = new System.Drawing.Point(107, 297);
-            this.pictureBoxUserPic.Name = "pictureBoxUserPic";
-            this.pictureBoxUserPic.Size = new System.Drawing.Size(210, 275);
-            this.pictureBoxUserPic.TabIndex = 20;
-            this.pictureBoxUserPic.TabStop = false;
-            this.pictureBoxUserPic.Visible = false;
             // 
             // dataGridView1
             // 
@@ -354,6 +335,27 @@ namespace CoworkingMap
             this.label10.Text = "HR-менеджер:";
             this.label10.Visible = false;
             // 
+            // pictureBoxUserPic
+            // 
+            this.pictureBoxUserPic.Image = global::CoworkingMap.Properties.Resources.profilepic;
+            this.pictureBoxUserPic.Location = new System.Drawing.Point(107, 297);
+            this.pictureBoxUserPic.Name = "pictureBoxUserPic";
+            this.pictureBoxUserPic.Size = new System.Drawing.Size(210, 275);
+            this.pictureBoxUserPic.TabIndex = 20;
+            this.pictureBoxUserPic.TabStop = false;
+            this.pictureBoxUserPic.Visible = false;
+            // 
+            // pictureBoxMap
+            // 
+            this.pictureBoxMap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxMap.Image = global::CoworkingMap.Properties.Resources.ofmap1;
+            this.pictureBoxMap.Location = new System.Drawing.Point(107, 297);
+            this.pictureBoxMap.Name = "pictureBoxMap";
+            this.pictureBoxMap.Size = new System.Drawing.Size(1591, 577);
+            this.pictureBoxMap.TabIndex = 5;
+            this.pictureBoxMap.TabStop = false;
+            this.pictureBoxMap.Click += new System.EventHandler(this.pictureBoxMap_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -393,9 +395,9 @@ namespace CoworkingMap
             this.Text = "MainForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUserPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

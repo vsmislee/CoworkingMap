@@ -39,9 +39,9 @@ namespace CoworkingMap
         private void MainForm_Load(object sender, EventArgs e)
         {
             pictureBoxMap.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxMap.Image = Image.FromFile("C:\\Users\\kjgug\\source\\repos\\CoworkingMap\\CoworkingMap\\images\\ofmap1.jpg");
+            //pictureBoxMap.Image = Image.FromFile("C:\\Users\\kjgug\\source\\repos\\CoworkingMap\\CoworkingMap\\images\\ofmap1.jpg");
             pictureBoxUserPic.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxUserPic.Image = Image.FromFile("C:\\Users\\kjgug\\source\\repos\\CoworkingMap\\CoworkingMap\\images\\profilepic.jpg");
+            //pictureBoxUserPic.Image = Image.FromFile("C:\\Users\\kjgug\\source\\repos\\CoworkingMap\\CoworkingMap\\images\\profilepic.jpg");
             this.TopMost = true;
             this.WindowState = FormWindowState.Maximized;
 
